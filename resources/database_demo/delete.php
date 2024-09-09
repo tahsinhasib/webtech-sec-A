@@ -11,18 +11,17 @@
     </form>
     
     <?php
-    if (isset($_POST['submit'])) {
-    $var1 = $_POST['uname'];
-    $con = mysqli_connect('localhost', 'root', '', 'demo2');
-    
-    $sql = "DELETE FROM info WHERE username='$var1'";
-    
-   if (mysqli_query($con, $sql)) {
-        echo "DELETED";
-   }
+        if (isset($_POST['submit'])) {
+            $var1 = $_POST['uname'];
+            $con = mysqli_connect('localhost', 'root', '', 'demo2');
+            
+            $sql = "DELETE FROM info WHERE username='$var1'";
+        
+        if (mysqli_query($con, $sql)) {
+            echo "DELETED";
+        }
 
-    }
-
+        }
     ?>
 </body>
 </html>

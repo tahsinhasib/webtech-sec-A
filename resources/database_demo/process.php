@@ -15,7 +15,7 @@
 
            $sql = "INSERT INTO info (username, fullname, age, location) VALUES ('$var1', '$var2', '$var3', '$var4')";
 
-          if (issest($_POST['submit']) && mysqli_query($con, $sql)) {
+          if (isset($_POST['submit']) && mysqli_query($con, $sql)) {
 
              echo "INSERTED";
           }

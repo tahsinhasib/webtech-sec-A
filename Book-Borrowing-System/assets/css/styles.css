@@ -33,6 +33,18 @@ body.dark{
     --search-bar: #242526;
 }
 
+.index-body {
+    background-image: url("../img/indeximg.webp");
+    background-position: center;
+}
+
+
+
+.forget-link {
+    display: flex;
+    margin-top: 2rem;
+}
+
 nav{
     position: sticky;
     top: 0;
@@ -124,7 +136,8 @@ nav .nav-bar .logo a{
 
 .darkLight-searchBox .dark-light,
 .darkLight-searchBox .searchToggle,
-.darkLight-searchBox .userProfile{
+.darkLight-searchBox .userProfile,
+.darkLight-searchBox .signout {
     height: 40px;
     width: 40px;
     display: flex;
@@ -135,52 +148,53 @@ nav .nav-bar .logo a{
 
 .dark-light i,
 .searchToggle i,
-.userProfile i{
-    position: absolute;
+.userProfile i,
+.signout a i{
+    position: relative;
     color: var(--text-color);
     font-size: 22px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.dark-light i.sun{
+.dark-light i.sun {
     opacity: 0;
     pointer-events: none;
 }
 
-.dark-light.active i.sun{
+.dark-light.active i.sun {
     opacity: 1;
     pointer-events: auto;
 }
 
-.dark-light.active i.moon{
+.dark-light.active i.moon {
     opacity: 0;
     pointer-events: none;
 }
 
-.searchToggle i.cancel{
+.searchToggle i.cancel {
     opacity: 0;
     pointer-events: none;
 }
 
-.searchToggle.active i.cancel{
+.searchToggle.active i.cancel {
     opacity: 1;
     pointer-events: auto;
 }
 
-.searchToggle.active i.search{
+.searchToggle.active i.search {
     opacity: 0;
     pointer-events: none;
 }
 
 
 
-.userProfile i.sun{
+.userProfile i.sun {
     opacity: 0;
     pointer-events: none;
 }
 
-.userProfile.active i.sun{
+.userProfile.active i.sun {
     opacity: 1;
     pointer-events: auto;
 }
@@ -195,6 +209,10 @@ nav .nav-bar .logo a{
 }
 
 .userProfile {
+    position: relative;
+}
+
+.signout i.sun {
     position: relative;
 }
 
@@ -410,6 +428,12 @@ body.dark .search-field i{
 
 .form button:hover() {
     background-color: wheat;
+}
+
+.forget-pass-container {
+    width: 50%;
+    align-items: center;
+    
 }
 
 

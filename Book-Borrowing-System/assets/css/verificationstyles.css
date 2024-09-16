@@ -1,0 +1,131 @@
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;;
+}
+
+
+/* ===== Colours ===== */
+:root{
+    --body-color: #f8cf9a;
+    --nav-color: #f49140;
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+}
+
+body{
+    height: 100vh;
+    background-color: var(--body-color);
+}
+
+
+.verify-body {
+    background-image: url("../img/verify.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* User info form */
+
+.form-section {
+    display: flex;
+    padding: 30px 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    background-color: #f49140;
+    justify-content: center;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h3 {
+    font-size: 1.5rem;
+    color: #010718;
+    font-weight: 700;
+    text-align: center;
+}
+
+.form-container .form {
+    margin-top: 30px;
+}
+
+.form .input-box {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.input-box label {
+    color: #242526;
+}
+
+.form .input-box input {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #393838;
+    border-radius: 6px;
+    padding: 0 15px;
+    margin-top: 8px;
+}
+
+
+.form-select-box select {
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #393838;
+    font-size: 1rem;
+    border-radius: 6px;
+    height: 50px;
+}
+
+
+.form .form-column {
+    display: flex;
+    column-gap: 15px;
+}
+
+.form button {
+    height: 55px;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 400;
+    transition: all;
+    background-color: #000000;
+}
+
+
+.form button:hover() {
+    background-color: wheat;
+}
+
+.forget-pass-container {
+    width: 50%;
+    align-items: center;
+    
+}
+
+.input-box-hidden {
+    padding-top: 80px;
+}

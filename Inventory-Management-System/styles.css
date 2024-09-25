@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#results {
+    margin-top: 20px;
+}
+.result {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+/* Hide the Add Product form initially */
+#addProductForm {
+    display: none;
+}
+
+.navbar {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: #34495e;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+form {
+    width: 40%;
+}
+
+input {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #393838;
+    border-radius: 6px;
+    padding: 0 15px;
+    margin-top: 8px;
+}
+
+
+
+button {
+    position: relative;
+    height: 50px;
+    width: 30%;
+    outline: none;
+    border: 1px solid #5d6d7e;
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-top: 8px;
+    background-color: #566573;
+    color: #ffffff;
+}
+
+body {
+    background-color: #d5d8dc;
+}
+
+.search-box input {
+    width: 40%;
+}
+
+.results-div {
+    background-color: #abb2b9;
+    font-weight: 500;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    border-radius: 6px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+
+.addproduct-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-button-div {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.label {
+    display: inline-block;
+    width: 150px; /* Set a fixed width to create space */
+}
+.value {
+    padding-left: 10px; /* Add some padding for additional space */
+}
+
+
+.database-values {
+    display: block;
+    text-align: left;
+}

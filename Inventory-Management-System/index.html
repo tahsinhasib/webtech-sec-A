@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Search</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>My Inventory</h1>
+    </nav>
+
+    <div class="search-box">
+        <label for="">Search here: </label>
+        <input type="text" id="search-bar" placeholder="Search by brand, manufacturer, price, etc.">
+    </div>
+
+    <div id="results" class="results-div"></div>
+
+    <!-- Add Product Form (initially hidden) -->
+    <div id="addProductForm" class="addproduct-div">
+        <div>
+            <h2>Please add product details</h2>
+        </div>
+        
+        <form>
+            <label>Brand Name:</label><br>
+            <input type="text" name="brand_name" required><br>
+            <label>Manufacturer:</label><br>
+            <input type="text" name="manufacturer" required><br>
+            <label>Price:</label><br>
+            <input type="number" name="price" step="0.01" required><br>
+            <label>Quantity:</label><br>
+            <input type="number" name="quantity" required><br>
+            <label>Warranty (years):</label><br>
+            <input type="number" name="warranty" required><br>
+            <div class="submit-button-div">
+                <!-- made changes here -->
+                <button type="button" onclick="addProduct()" name="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Load 5 default products when the page loads
+        window.onload = function() {
+            loadDefaultProducts();
+        };
+
+        // Function to load the 5 default products
+        function loadDefaultProducts() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'search_inventory.php?action=default_products', true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById('results').innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+
+        // Search bar functionality
+        document.getElementById('search-bar').addEventListener('keyup', function() {
+            var query = this.value;
+
+            if (query.length > 2) {  // Only search if more than 2 characters
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'search_inventory.php?query=' + query, true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        document.getElementById('results').innerHTML = xhr.responseText;
+                    }
+                };
+                xhr.send();
+            } else {
+                loadDefaultProducts(); // If query is too short, reload default products
+            }
+        });
+
+        // Function to display the add product form
+        function showAddProductForm() {
+            document.getElementById('addProductForm').style.display = 'flex';
+        }
+
+        // Function to handle adding a new product
+        function addProduct() {
+            var form = document.querySelector('#addProductForm form');
+            var formData = new FormData(form);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'search_inventory.php', true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById('results').innerHTML = xhr.responseText;
+                    form.reset(); // Clear the form after submission
+                    document.getElementById('addProductForm').style.display = 'none'; // Hide form after submission
+                }
+            };
+            xhr.send(formData);
+        }
+    </script>
+
+</body>
+</html>
